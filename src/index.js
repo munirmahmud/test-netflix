@@ -1,12 +1,9 @@
-import React, {useContext, createContext} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { GlobalStyles } from "./GlobalStyles";
 import { firebase } from './lib/firebase.prod';
-
-const FirebaseContext = createContext(null);
-
-
+import { FirebaseContext } from './context/firebase';
 
 ReactDOM.render(
   <React.StrictMode>
