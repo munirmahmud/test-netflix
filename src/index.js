@@ -1,13 +1,19 @@
-import React from 'react';
+import React, {useContext, createContext} from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { GlobalStyles } from "./GlobalStyles";
+import { firebase } from './lib/firebase.prod';
+
+const FirebaseContext = createContext(null);
+
 
 
 ReactDOM.render(
   <React.StrictMode>
-      <GlobalStyles />
-      <App />
+      <FirebaseContext.Provider value={{ firebase }}>
+          <GlobalStyles />
+          <App />
+      </FirebaseContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
